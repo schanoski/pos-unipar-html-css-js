@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5, CSS3 e ES6</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">HTML5, CSS3, JS</h1>
+            <p class="lead">Utilizando Bootstrap 4.</p>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="index.html">Inicial</a>
+                <a class="nav-link" href="formulario.html">Formulário</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container-fluid">
+            <div id="dropzone" class="row" style="padding: 10px;" 
+                ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="leave(event)">
+
+            </div>
+            
+            <div id="dropzone2" class="row" style="padding: 10px;" 
+                ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="leave(event)">
+
+                <div id="news1" class="col-lg-4" draggable="true" 
+                    ondragstart="drag(event)" ondragover="denyDrop(event)">
+                    <article>
+                        <h3>São Paulo vence o Liverpool e conquista o tricampeonato mundial</h3>
+                        <h6>
+                            <small class="font-weight-bolder">18/12/2005</small>
+                            <small class="float-right">contato@uol.com.br</small>
+                        </h6>
+                        <img src="img/img01.jpg" class="img-fluid">
+                        <p>
+                            Um ano perfeito para o São Paulo. Após 11 anos o time do Morumbi confirmou 2005.
+                        </p>
+                        <a class="btn btn-warning btn-sm float-right" href="https://www.uol.com.br/esporte/futebol/ultimas/2005/12/18/ult59u98532.jhtm ">Leia
+                            mais...</a>
+                    </article>
+                </div>
+                <div id="news2" class="col-lg-4" draggable="true" ondragstart="drag(event)" ondragover="denyDrop(event)">
+                    <article>
+                        <h3>Imposto de Renda e Bitcoin: quais os erros que podem te fazer cair na malha fina</h3>
+                        <h6>
+                            <small>28/02/2020 </small>
+                            <small>contato@uol.com.br</small>
+                        </h6>
+                        <img src="img/img02.jpg" class="img-fluid">
+                        <p>
+                            Informações incorretas na declaração de Imposto de Renda Pessoa Física podem fazer
+                            contribuintes caírem na malha fina da Receita Federal.
+                        </p>
+                        <a class="btn btn-warning btn-sm float-right" 
+                            href="https://portaldobitcoin.uol.com.br/imposto-de-renda-e-bitcoin-quais-os-erros-que-podem-te-fazer-cair-na-malha-fina/">Leia
+                            mais...</a>
+                    </article>
+                </div>
+                <div id="news3" class="col-lg-4" draggable="true" ondragstart="drag(event)" ondragover="denyDrop(event)">
+                    <article>
+                        <h3>PS5 volta aos estoques da Amazon Brasil</h3>
+                        <h6>
+                            <small>08/04/2021</small>
+                            <small>contato@uol.com.br</small>
+                        </h6>
+                        <img src="img/img03.jpg" class="img-fluid">
+                        <p>
+                            Depois de muito tempo, finalmente o Playstation 5 está de volta aos estoques brasileiros da
+                            Amazon, que passa a contar com as versões física e digital do console da Sony.
+                        </p>
+                        <a class="btn btn-warning btn-sm float-right" 
+                            href="https://observatoriodegames.uol.com.br/playstation/ps5/ps5-volta-aos-estoques-da-amazon-brasil">Leia
+                            mais...</a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div>William Schanoski</div>
+            <div>
+                <strong>Pós-Graduação em Desenvolvimento de Aplicações Web e Mobile</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+            ev.currentTarget.style.border = "3px dotted #ccc";
+            ev.currentTarget.style.background = "#eee";
+        }
+
+        function denyDrop(ev) {
+            ev.stopPropagation();
+        }
+        
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function leave(ev){
+            ev.preventDefault();
+            ev.target.style.border = "none";
+            ev.target.style.background = "inherit";
+        }
+        
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            ev.target.style.border = "none";
+            ev.target.style.background = "inherit";
+        }
+    </script>
+</body>
+
+</html>
